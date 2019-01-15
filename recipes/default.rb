@@ -98,6 +98,7 @@ eos
   execute "reload-ip#{v}tables" do
     command "ip#{v}tables-restore < #{iptable_rules}"
     user "root"
+    environment 'PATH' => '/usr/sbin:/usr/bin:/bin:/sbin'
     action :nothing
   end
 
